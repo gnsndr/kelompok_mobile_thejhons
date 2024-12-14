@@ -58,7 +58,7 @@ class _SplashScreenState extends State<SplashScreen> {
                       color: Colors.white,
                     ),
                   ),
-                  const SizedBox(height: 10), // spasi antar tekst
+                  const SizedBox(height: 7), // spasi antar tekst
                   const Text(
                     'Swimming Pool',
                     style: TextStyle(

@@ -7,7 +7,7 @@ class PoolPage extends StatelessWidget {
   // Function to build the card widget
   Widget _buildCard({
     required BuildContext context,
-    required List<String> imageUrls, // Ganti dari String menjadi List<String>
+    required List<String> imageUrls, 
     required String title,
     required String description,
     required String distance,
@@ -18,7 +18,7 @@ class PoolPage extends StatelessWidget {
           context,
           MaterialPageRoute(
             builder: (context) => PoolDetailPage(
-              imageUrls: imageUrls, // Kirim sebagai list
+              imageUrls: imageUrls, 
               title: title,
               description: description,
             ),
@@ -33,20 +33,18 @@ class PoolPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Image with controlled size
               Container(
                 height: 200,
                 width: double.infinity,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
                   image: DecorationImage(
-                    image: AssetImage(imageUrls.first), // Ambil gambar pertama
+                    image: AssetImage(imageUrls.first), 
                     fit: BoxFit.cover,
                   ),
                 ),
               ),
               const SizedBox(height: 12),
-              // Title of the card
               Text(
                 title,
                 style: const TextStyle(
@@ -56,7 +54,6 @@ class PoolPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 6),
-              // Description of the card
               Text(
                 description,
                 style: TextStyle(
@@ -65,7 +62,6 @@ class PoolPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 8),
-              // Distance or additional info
               if (distance.isNotEmpty)
                 Text(
                   'Distance: $distance',
@@ -86,7 +82,7 @@ class PoolPage extends StatelessWidget {
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
-          color: Color(0xFFD9D9D9), // Warna latar belakang biru muda
+          color: Color(0xFFD9D9D9), 
         ),
         child: SingleChildScrollView(
           child: Padding(
@@ -99,7 +95,7 @@ class PoolPage extends StatelessWidget {
                     'assets/holiday.jpeg',
                     'assets/holiday.jpeg',
                     'assets/holiday.jpeg',
-                  ], // Kirim sebagai list
+                  ], 
                   title: 'Waterboom',
                   description: 'Arena Wahana Yang Dapat Digunakan Semua Usia',
                   distance: '1 Meter',

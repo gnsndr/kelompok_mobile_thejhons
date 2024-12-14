@@ -74,12 +74,12 @@ class FoodPage extends StatelessWidget {
         ),
         const SizedBox(height: 8),
         SingleChildScrollView(
-          scrollDirection: Axis.horizontal, // Enable horizontal scrolling
+          scrollDirection: Axis.horizontal, // horizontal scrolling
           child: Row(
             children: items.map((item) {
               return Padding(
                 padding: const EdgeInsets.only(
-                    right: 16.0), // Add spacing between items
+                    right: 16.0), // nambah spasi diantara items
                 child: item,
               );
             }).toList(),
@@ -94,14 +94,14 @@ class FoodPage extends StatelessWidget {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       elevation: 2,
       child: SizedBox(
-        width: 190, // Set a fixed width for the card
+        width: 190, 
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
               Image.asset(
                 imagePath,
-                height: 160, // Larger image size
+                height: 160, 
                 width: 180,
                 fit: BoxFit.cover,
               ),

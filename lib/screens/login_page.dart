@@ -50,7 +50,7 @@ class _LoginPageState extends State<LoginPage> {
                 ],
               ),
               const SizedBox(height: 40),
-              // Username TextField
+
               TextField(
                 controller: _usernameController,
                 decoration: InputDecoration(
@@ -66,7 +66,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               const SizedBox(height: 20),
-              // Password TextField
+ 
               TextField(
                 controller: _passwordController,
                 obscureText: true,
@@ -95,9 +95,9 @@ class _LoginPageState extends State<LoginPage> {
                   );
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue, // Background color
+                  backgroundColor: Colors.blue, 
                   padding: const EdgeInsets.symmetric(
-                    vertical: 12.0, // Tinggi tombol diperkecil
+                    vertical: 12.0, 
                     horizontal: 40.0,
                   ),
                   shape: RoundedRectangleBorder(
@@ -134,7 +134,7 @@ class _LoginPageState extends State<LoginPage> {
                       "Daftar",
                       style: TextStyle(
                         fontSize: 14,
-                        color: Colors.blue, // Warna teks biru
+                        color: Colors.blue, 
                         fontWeight: FontWeight.bold,
                       ),
                     ),

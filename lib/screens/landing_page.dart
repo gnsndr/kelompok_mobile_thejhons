@@ -12,9 +12,9 @@ class LandingPage extends StatelessWidget {
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              Color(0xFF2196F3), // Biru muda
-              Color(0xFF1E88E5), // Biru sedang
-              Color(0xFF1976D2), // Biru tua
+              Color(0xFF2196F3), 
+              Color(0xFF1E88E5), 
+              Color(0xFF1976D2), 
             ],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -30,7 +30,6 @@ class LandingPage extends StatelessWidget {
               ),
             ),
 
-            // Overlay Gelap
             Positioned.fill(
               child: Container(
                 color: Colors.black.withOpacity(0.3),
@@ -67,10 +66,8 @@ class LandingPage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  // Tombol & Footer
                   Column(
                     children: [
-                      // Tombol "Mari Kita Mulai"
                       GestureDetector(
                         onTap: () {
                           Navigator.pushReplacement(

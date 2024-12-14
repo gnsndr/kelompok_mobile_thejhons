@@ -11,12 +11,12 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
 
-  // Daftar halaman untuk navigasi
+  // halaman halaman untuk navigasi
   final List<Widget> _pages = [
-    HomeContent(), // Konten Halaman Home
-    PoolPage(), // Konten Halaman Pool
-    FoodPage(), // Konten Halaman Menu
-    AccountPage(), // Konten Halaman Account
+    HomeContent(), 
+    PoolPage(), 
+    FoodPage(), 
+    AccountPage(), 
   ];
 
   void _onItemTapped(int index) {
@@ -31,7 +31,7 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         backgroundColor: Color(0xFF405769),
         centerTitle: true,
-        automaticallyImplyLeading: false, // Menghapus tombol kembali
+        automaticallyImplyLeading: false, 
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -39,27 +39,27 @@ class _HomePageState extends State<HomePage> {
               'assets/logo the jhon.png',
               height: 30,
             ),
-            const SizedBox(width: 8), // Jarak antara logo dan teks
+            const SizedBox(width: 8), 
             const Text(
               'The Jhons',
               style: TextStyle(
                 fontSize: 20,
-                color: Colors.white, // Warna putih untuk teks
+                color: Colors.white, 
               ),
             ),
           ],
         ),
       ),
 
-      // Gunakan IndexedStack untuk mempertahankan status halaman
+      //  IndexedStack  mempertahankan status halaman
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [
-              Color(0xFFE0EFFC), // Gradasi biru tua
-              Color(0xFF1F559C), // Gradasi biru muda
+              Color(0xFFE0EFFC), 
+              Color(0xFF1F559C), 
             ],
           ),
         ),
@@ -114,7 +114,7 @@ class HomeContent extends StatelessWidget {
                 color: Color(0xFF405769),
               ),
             ),
-            // Deskripsi
+
             const SizedBox(height: 10),
             Container(
               padding: const EdgeInsets.all(16.0),
@@ -141,7 +141,7 @@ class HomeContent extends StatelessWidget {
             IntrinsicHeight(
               child: Row(
                 crossAxisAlignment:
-                    CrossAxisAlignment.stretch, // Membuat tinggi sama
+                    CrossAxisAlignment.stretch, 
                 children: [
                   // Kotak Rating
                   Expanded(
@@ -260,7 +260,7 @@ class HomeContent extends StatelessWidget {
                         ],
                       ),
                       const SizedBox(
-                          height: 12), // Tambahkan jarak yang konsisten
+                          height: 12), 
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -268,7 +268,7 @@ class HomeContent extends StatelessWidget {
                             'Senin - Minggu',
                             style: TextStyle(fontSize: 14),
                           ),
-                          const SizedBox(height: 4), // Jarak antar teks
+                          const SizedBox(height: 4), 
                           Text(
                             '08.00 - 21.00 WIB',
                             style: TextStyle(fontSize: 14),
@@ -342,9 +342,9 @@ class HomeContent extends StatelessWidget {
             ),
             const SizedBox(height: 20),
 
-            // Our Facility
+            //  Facility
             Text(
-              'Our Facility',
+              'Fasilitas Kami',
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 10),
@@ -360,10 +360,10 @@ class HomeContent extends StatelessWidget {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(10.0),
                       child: Image.asset(
-                        'assets/fasilitas/fasilitas${index + 1}.png', // Ganti sesuai nama gambar di assets
+                        'assets/fasilitas/fasilitas${index + 1}.png', 
                         fit: BoxFit.cover,
                         height: 100,
-                        width: 200, // Tambahkan lebar gambar
+                        width: 200, 
                       ),
                     ),
                   );
@@ -374,12 +374,12 @@ class HomeContent extends StatelessWidget {
 
             // Our Menu
             Text(
-              'Our Menu',
+              'Menu Kami',
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 10),
             SizedBox(
-              height: 120, // Tinggi area gambar
+              height: 120, 
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: 6, // Jumlah gambar
@@ -391,10 +391,10 @@ class HomeContent extends StatelessWidget {
                       borderRadius: BorderRadius.circular(
                           10.0), // Radius untuk sudut melengkung
                       child: Image.asset(
-                        'assets/menu/menu${index + 1}.jpg', // Ganti sesuai nama gambar di assets
+                        'assets/menu/menu${index + 1}.jpg', 
                         fit: BoxFit.cover,
                         height: 100,
-                        width: 210, // Tambahkan lebar gambar
+                        width: 210, 
                       ),
                     ),
                   );

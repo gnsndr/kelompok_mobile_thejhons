@@ -23,7 +23,7 @@ class PoolDetailPage extends StatelessWidget {
         centerTitle: true,
         automaticallyImplyLeading: true,
         iconTheme: const IconThemeData(
-          color: Colors.white, // Tombol kembali menjadi warna putih
+          color: Colors.white,
         ),
         title: Row(
           mainAxisSize: MainAxisSize.min,
@@ -49,7 +49,7 @@ class PoolDetailPage extends StatelessWidget {
         children: [
           // Bagian Gambar (dapat digeser)
           SizedBox(
-            height: MediaQuery.of(context).size.height * 0.6, // Tinggi slide
+            height: MediaQuery.of(context).size.height * 0.6, 
             child: PageView.builder(
               controller: _pageController,
               itemCount: imageUrls.length,
@@ -62,7 +62,7 @@ class PoolDetailPage extends StatelessWidget {
               },
             ),
           ),
-          // Indikator Gambar
+
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 8.0),
             child: SmoothPageIndicator(
@@ -130,7 +130,7 @@ class PoolDetailPage extends StatelessWidget {
                     ),
                     const SizedBox(height: 4),
                     const Text(
-                      "Keamanan: Ikuti arahan lifeguard dan aturan di area",
+                      "Keamanan: Ikuti arahan dan aturan di area",
                       style: TextStyle(fontSize: 14),
                     ),
                   ],

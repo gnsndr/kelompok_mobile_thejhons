@@ -20,7 +20,7 @@ class _RegisterPageState extends State<RegisterPage> {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/image1.png'), // Gambar latar belakang
+            image: AssetImage('assets/image1.png'), 
             fit: BoxFit.cover,
           ),
         ),
@@ -32,7 +32,6 @@ class _RegisterPageState extends State<RegisterPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  // Judul dengan logo
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -53,7 +52,6 @@ class _RegisterPageState extends State<RegisterPage> {
                     ],
                   ),
                   const SizedBox(height: 20),
-                  // Username TextField
                   TextField(
                     controller: _usernameController,
                     decoration: InputDecoration(
@@ -69,7 +67,6 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
                   ),
                   const SizedBox(height: 16),
-                  // Password TextField
                   TextField(
                     controller: _passwordController,
                     obscureText: true,
@@ -86,7 +83,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
                   ),
                   const SizedBox(height: 16),
-                  // Confirm Password TextField
+
                   TextField(
                     controller: _confirmPasswordController,
                     obscureText: true,
@@ -146,14 +143,14 @@ class _RegisterPageState extends State<RegisterPage> {
                             text: 'Sudah punya akun? ',
                             style: TextStyle(
                               color: Colors
-                                  .white, // Warna putih untuk teks pertama
+                                  .white, 
                               fontWeight: FontWeight.normal,
                             ),
                           ),
                           TextSpan(
                             text: 'Login',
                             style: TextStyle(
-                              color: Colors.blue, // Warna biru untuk teks kedua
+                              color: Colors.blue, 
                               fontWeight: FontWeight.bold,
                             ),
                           ),

@@ -32,7 +32,7 @@ class EditProfilePage extends StatelessWidget {
                   const SizedBox(height: 8),
                   GestureDetector(
                     onTap: () {
-                      // Logika untuk mengganti foto profil
+       
                       showDialog(
                         context: context,
                         builder: (BuildContext context) {
@@ -94,7 +94,7 @@ class EditProfilePage extends StatelessWidget {
             // Tombol Simpan
             ElevatedButton(
               onPressed: () {
-                // Simpan perubahan
+
                 Navigator.pop(context);
               },
               child: const Text('Simpan'),

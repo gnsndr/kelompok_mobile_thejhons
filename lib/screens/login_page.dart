@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_thejhons/screens/home_page.dart';
+import 'package:mobile_thejhons/screens/register_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -15,7 +17,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage('assets/image1.png'),
             fit: BoxFit.cover,
@@ -27,16 +29,28 @@ class _LoginPageState extends State<LoginPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Text(
-                'THE JHONS',
-                style: TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),
+              // Judul dengan Logo
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    'assets/logo the jhon.png', 
+                    height: 30,
+                    width: 30,
+                  ),
+                  const SizedBox(width: 10),
+                  const Text(
+                    'THE JHONS',
+                    style: TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
               ),
               const SizedBox(height: 40),
-              // Username TextField with padding on left and right
+              // Username TextField
               TextField(
                 controller: _usernameController,
                 decoration: InputDecoration(
@@ -47,12 +61,12 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   filled: true,
                   fillColor: Colors.white,
-                  contentPadding: const EdgeInsets.symmetric(
-                      horizontal: 20.0), // Padding kiri-kanan
+                  contentPadding:
+                      const EdgeInsets.symmetric(horizontal: 20.0),
                 ),
               ),
               const SizedBox(height: 20),
-              // Password TextField with padding on left and right
+              // Password TextField
               TextField(
                 controller: _passwordController,
                 obscureText: true,
@@ -60,47 +74,72 @@ class _LoginPageState extends State<LoginPage> {
                   labelText: 'Password',
                   labelStyle: const TextStyle(color: Colors.grey),
                   border: OutlineInputBorder(
-                    borderRadius:
-                        BorderRadius.circular(15.0), // Consistent border radius
+                    borderRadius: BorderRadius.circular(15.0),
                   ),
                   filled: true,
                   fillColor: Colors.white,
-                  contentPadding: const EdgeInsets.symmetric(
-                      horizontal: 20.0), // Padding kiri-kanan
+                  contentPadding:
+                      const EdgeInsets.symmetric(horizontal: 20.0),
                 ),
               ),
               const SizedBox(height: 20),
               // Login Button
               ElevatedButton(
                 onPressed: () {
-                  // Add your login logic here
+                  // Navigasi ke HomePage
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => HomePage(),
+                    ),
+                  );
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blue, // Background color
                   padding: const EdgeInsets.symmetric(
-                      vertical: 15.0, horizontal: 50.0),
+                    vertical: 12.0, // Tinggi tombol diperkecil
+                    horizontal: 40.0,
+                  ),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15.0),
                   ),
                 ),
                 child: const Text(
                   'Login',
-                  style: TextStyle(fontSize: 20, color: Colors.white),
+                  style: TextStyle(fontSize: 18, color: Colors.white),
                 ),
               ),
               const SizedBox(height: 30),
               // Register Text
-              TextButton(
-                onPressed: () {
-                  // Add your register navigation logic here
-                },
-                child: const Text(
-                  'Tidak memiliki akun? Daftar',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    "Tidak memiliki akun? ",
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: Colors.white70,
+                    ),
                   ),
-                ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const RegisterPage(),
+                        ),
+                      );
+                    },
+                    child: const Text(
+                      "Daftar",
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.blue, // Warna teks biru
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),

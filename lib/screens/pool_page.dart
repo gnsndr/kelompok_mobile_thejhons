@@ -1,65 +1,81 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_thejhons/screens/pool_detail.dart';
 
 class PoolPage extends StatelessWidget {
   const PoolPage({super.key});
 
   // Function to build the card widget
   Widget _buildCard({
-    required String imageUrl,
+    required BuildContext context,
+    required List<String> imageUrls, // Ganti dari String menjadi List<String>
     required String title,
     required String description,
     required String distance,
   }) {
-    return Card(
-      elevation: 5,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-      child: Padding(
-        padding: const EdgeInsets.all(12.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Image with controlled size
-            Container(
-              height: 200, // Set image height here
-              width: double.infinity,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
-                image: DecorationImage(
-                  image: AssetImage(imageUrl),
-                  fit: BoxFit.cover, // Scale image to fit
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => PoolDetailPage(
+              imageUrls: imageUrls, // Kirim sebagai list
+              title: title,
+              description: description,
+            ),
+          ),
+        );
+      },
+      child: Card(
+        elevation: 5,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        child: Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Image with controlled size
+              Container(
+                height: 200,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  image: DecorationImage(
+                    image: AssetImage(imageUrls.first), // Ambil gambar pertama
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
-            ),
-            const SizedBox(height: 12),
-            // Title of the card
-            Text(
-              title,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-              ),
-            ),
-            const SizedBox(height: 6),
-            // Description of the card
-            Text(
-              description,
-              style: TextStyle(
-                fontSize: 14,
-                color: Colors.grey[700],
-              ),
-            ),
-            const SizedBox(height: 8),
-            // Distance or additional info
-            if (distance.isNotEmpty)
+              const SizedBox(height: 12),
+              // Title of the card
               Text(
-                'Distance: $distance',
-                style: TextStyle(
-                  fontSize: 12,
-                  color: Colors.blue,
+                title,
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
                 ),
               ),
-          ],
+              const SizedBox(height: 6),
+              // Description of the card
+              Text(
+                description,
+                style: TextStyle(
+                  fontSize: 14,
+                  color: Colors.grey[700],
+                ),
+              ),
+              const SizedBox(height: 8),
+              // Distance or additional info
+              if (distance.isNotEmpty)
+                Text(
+                  'Distance: $distance',
+                  style: const TextStyle(
+                    fontSize: 12,
+                    color: Colors.blue,
+                  ),
+                ),
+            ],
+          ),
         ),
       ),
     );
@@ -74,45 +90,40 @@ class PoolPage extends StatelessWidget {
           child: Column(
             children: [
               _buildCard(
-                imageUrl: 'assets/image 7.png',
+                context: context,
+                imageUrls: [
+                  'assets/holiday.jpeg',
+                  'assets/holiday.jpeg',
+                  'assets/holiday.jpeg',
+                ], // Kirim sebagai list
                 title: 'Waterboom',
                 description: 'Arena Wahana Yang Dapat Digunakan Semua Usia',
-                distance: '8 Meter',
+                distance: '1 Meter',
               ),
               const SizedBox(height: 16),
               _buildCard(
-                imageUrl: 'assets/image 7.png',
+                context: context,
+                imageUrls: [
+                  'assets/image4.png',
+                  'assets/image5.png',
+                  'assets/image6.png',
+                ],
                 title: 'Kolam Anak',
                 description: 'Arena Khusus Untuk Anak-anak Usia 5-15 Tahun',
-                distance: '8 Meter',
+                distance: '2 Meter',
               ),
               const SizedBox(height: 16),
               _buildCard(
-                imageUrl: 'assets/image 7.png',
-                title: 'Resort Area',
-                description: 'Arena Penginapan',
-                distance: '',
-              ),
-              const SizedBox(height: 16),
-              _buildCard(
-                imageUrl: 'assets/image 7.png',
-                title: 'Private Pool',
-                description: 'Kolam Renang Eksklusif untuk Pengunjung',
-                distance: '5 Meter',
-              ),
-              const SizedBox(height: 16),
-              _buildCard(
-                imageUrl: 'assets/image 7.png',
-                title: 'Olympic Pool',
-                description: 'Kolam Renang Berstandar Internasional',
-                distance: '10 Meter',
-              ),
-              const SizedBox(height: 16),
-              _buildCard(
-                imageUrl: 'assets/image 7.png',
-                title: 'Kids Pool',
-                description: 'Kolam Renang Aman untuk Anak-anak',
-                distance: '7 Meter',
+                context: context,
+                imageUrls: [
+                  'assets/image7.png',
+                  'assets/image8.png',
+                  'assets/image9.png',
+                ],
+                title: 'Kolam Dewasa',
+                description:
+                    'Arena Wahana Yang Dapat Digunakan Untuk usia 15 tahun ke atas',
+                distance: '5 meter',
               ),
             ],
           ),

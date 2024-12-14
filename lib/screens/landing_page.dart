@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_thejhons/screens/home_page.dart';
+import 'package:mobile_thejhons/screens/register_page.dart';
+import 'package:mobile_thejhons/screens/login_page.dart';
 
 class LandingPage extends StatelessWidget {
   const LandingPage({super.key});
@@ -47,10 +48,10 @@ class LandingPage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: const [
                       Text(
-                        "Ayo Berenang "
-                        "di The Jhons",
+                        "Ayo Berenang"
+                        " di The Jhons",
                         style: TextStyle(
-                          fontSize: 32,
+                          fontSize: 27,
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
                           height: 1.3,
@@ -60,7 +61,7 @@ class LandingPage extends StatelessWidget {
                       Text(
                         "Rasakan Sensasi berenang yang memuaskan di kolam renang The Jhons",
                         style: TextStyle(
-                          fontSize: 14,
+                          fontSize: 16,
                           color: Colors.white70,
                         ),
                       ),
@@ -75,7 +76,7 @@ class LandingPage extends StatelessWidget {
                           Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => HomePage(),
+                              builder: (context) => const RegisterPage(),
                             ),
                           );
                         },
@@ -130,7 +131,12 @@ class LandingPage extends StatelessWidget {
                           ),
                           GestureDetector(
                             onTap: () {
-                              // Tambahkan aksi ketika klik "Masuk"
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const LoginPage(),
+                                ),
+                              );
                             },
                             child: const Text(
                               "Masuk",

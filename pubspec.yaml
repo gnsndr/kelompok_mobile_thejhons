@@ -31,6 +31,7 @@ dependencies:
   flutter:
     sdk: flutter
   lottie: ^2.3.2
+  smooth_page_indicator: ^1.0.0+2
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -62,9 +63,28 @@ flutter:
   assets:
   - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\image1.png
   - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\holiday.jpeg
-  - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\images 6.png
   - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\image 7.png
   - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\logo the jhon.png
+  - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\fasilitas\fasilitas1.png
+  - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\fasilitas\fasilitas2.png
+  - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\fasilitas\fasilitas3.png
+  - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\fasilitas\fasilitas4.png
+  - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\fasilitas\fasilitas5.png
+  - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\fasilitas\fasilitas6.png
+  - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\menu\menu1.jpg
+  - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\menu\menu2.jpg
+  - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\menu\menu3.jpg
+  - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\menu\menu4.jpg
+  - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\menu\menu5.jpg
+  - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\menu\menu6.jpg
+  - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\menu\menu7.jpg
+  - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\menu\menu8.jpg
+  - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\menu\menu9.jpg
+  - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\menu\menu10.jpg
+  - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\menu\menu11.jpg
+  - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\menu\menu12.jpg
+  
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

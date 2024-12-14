@@ -29,7 +29,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
+        backgroundColor: Color(0xFF405769),
         centerTitle: true,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -50,17 +50,29 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       // Gunakan IndexedStack untuk mempertahankan status halaman
-      body: IndexedStack(
-        index: _selectedIndex,
-        children: _pages,
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              Color(0xFFE0EFFC), // Gradasi biru tua
+              Color(0xFF1F559C), // Gradasi biru muda
+            ],
+          ),
+        ),
+        child: IndexedStack(
+          index: _selectedIndex,
+          children: _pages,
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        selectedItemColor: Colors.blue,
+        selectedItemColor: Color(0xFF405769),
         unselectedItemColor: Colors.grey,
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
-        items: const [
+        items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
@@ -98,7 +110,7 @@ class HomeContent extends StatelessWidget {
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
-                color: Colors.blue,
+                color: Color(0xFF405769),
               ),
             ),
             // Deskripsi
@@ -118,92 +130,98 @@ class HomeContent extends StatelessWidget {
               ),
               child: Text(
                 'The Jhons Cianjur adalah sebuah tempat wisata dan resort yang berlokasi di Cianjur, Jawa Barat. Tempat ini menawarkan berbagai macam fasilitas rekreasi, termasuk akomodasi, area bermain, wahana.',
-                style: TextStyle(fontSize: 14, color: Colors.blue.shade800),
+                style: TextStyle(fontSize: 14, color: Color(0xFF405769)),
                 textAlign: TextAlign.justify,
               ),
             ),
             const SizedBox(height: 20),
 
             // Rating dan Lokasi
-            Row(
-              children: [
-                // Kotak Rating
-                Expanded(
-                  child: Container(
-                    padding: const EdgeInsets.all(16.0),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10.0),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.2),
-                          spreadRadius: 3,
-                          blurRadius: 5,
-                        ),
-                      ],
-                    ),
-                    child: Column(
-                      children: [
-                        Row(
-                          children: [
-                            Icon(Icons.star, color: Colors.yellow),
-                            const SizedBox(width: 8),
-                            Text(
-                              '5.0',
-                              style: TextStyle(
-                                fontSize: 24,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(height: 8),
-                        Text('Nyaman', style: TextStyle(fontSize: 16)),
-                        Text('3 review',
-                            style: TextStyle(fontSize: 12, color: Colors.grey)),
-                      ],
-                    ),
-                  ),
-                ),
-                const SizedBox(width: 10),
-
-                // Kotak Lokasi
-                Expanded(
-                  child: Container(
-                    padding: const EdgeInsets.all(16.0),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10.0),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.2),
-                          spreadRadius: 3,
-                          blurRadius: 5,
-                        ),
-                      ],
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            Icon(Icons.location_on, color: Colors.blue),
-                            const SizedBox(width: 8),
-                            Text('Lokasi',
+            IntrinsicHeight(
+              child: Row(
+                crossAxisAlignment:
+                    CrossAxisAlignment.stretch, // Membuat tinggi sama
+                children: [
+                  // Kotak Rating
+                  Expanded(
+                    child: Container(
+                      padding: const EdgeInsets.all(16.0),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10.0),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.2),
+                            spreadRadius: 3,
+                            blurRadius: 5,
+                          ),
+                        ],
+                      ),
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              Icon(Icons.star, color: Colors.yellow),
+                              const SizedBox(width: 8),
+                              Text(
+                                '5.0',
                                 style: TextStyle(
-                                    fontSize: 16, fontWeight: FontWeight.bold)),
-                          ],
-                        ),
-                        const SizedBox(height: 8),
-                        Text(
-                          'Kawasan Hutan Kota Cianjur, Jalan Desa Babakan, Jawa Barat, Indonesia',
-                          style: TextStyle(fontSize: 12),
-                        ),
-                      ],
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 8),
+                          Text('Nyaman', style: TextStyle(fontSize: 16)),
+                          Text('3 review',
+                              style:
+                                  TextStyle(fontSize: 12, color: Colors.grey)),
+                        ],
+                      ),
                     ),
                   ),
-                ),
-              ],
+                  const SizedBox(width: 10),
+
+                  // Kotak Lokasi
+                  Expanded(
+                    child: Container(
+                      padding: const EdgeInsets.all(16.0),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10.0),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.2),
+                            spreadRadius: 3,
+                            blurRadius: 5,
+                          ),
+                        ],
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Icon(Icons.location_on, color: Color(0xFF405769)),
+                              const SizedBox(width: 8),
+                              Text('Lokasi',
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold)),
+                            ],
+                          ),
+                          const SizedBox(height: 8),
+                          Text(
+                            'Kawasan Hutan Kota Cianjur, Jalan Desa Babakan, Jawa Barat, Indonesia',
+                            style: TextStyle(fontSize: 12),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
             const SizedBox(height: 20),
 
@@ -231,14 +249,31 @@ class HomeContent extends StatelessWidget {
                         children: [
                           Icon(Icons.access_time, color: Colors.blue),
                           const SizedBox(width: 8),
-                          Text('Jam Operasional',
-                              style: TextStyle(
-                                  fontSize: 16, fontWeight: FontWeight.bold)),
+                          Text(
+                            'Jam Operasional',
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                         ],
                       ),
-                      const SizedBox(height: 8),
-                      Text('Senin - Minggu', style: TextStyle(fontSize: 14)),
-                      Text('08.00 - 21.00 WIB', style: TextStyle(fontSize: 14)),
+                      const SizedBox(
+                          height: 12), // Tambahkan jarak yang konsisten
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Senin - Minggu',
+                            style: TextStyle(fontSize: 14),
+                          ),
+                          const SizedBox(height: 4), // Jarak antar teks
+                          Text(
+                            '08.00 - 21.00 WIB',
+                            style: TextStyle(fontSize: 14),
+                          ),
+                        ],
+                      ),
                     ],
                   ),
                   Row(
@@ -248,20 +283,25 @@ class HomeContent extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(
                             horizontal: 12, vertical: 8),
                         decoration: BoxDecoration(
-                          color: Colors.blue,
+                          color: Color(0xFF405769),
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                         child: Column(
                           children: [
-                            Text('WeekDays',
-                                style: TextStyle(
-                                    fontSize: 12,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold)),
+                            Text(
+                              'WeekDays',
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
                             const SizedBox(height: 4),
-                            Text('40K',
-                                style: TextStyle(
-                                    fontSize: 12, color: Colors.white)),
+                            Text(
+                              '40K',
+                              style:
+                                  TextStyle(fontSize: 12, color: Colors.white),
+                            ),
                           ],
                         ),
                       ),
@@ -272,20 +312,25 @@ class HomeContent extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(
                             horizontal: 12, vertical: 8),
                         decoration: BoxDecoration(
-                          color: Colors.blue,
+                          color: Color(0xFF405769),
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                         child: Column(
                           children: [
-                            Text('WeekEnd',
-                                style: TextStyle(
-                                    fontSize: 12,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold)),
+                            Text(
+                              'WeekEnd',
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
                             const SizedBox(height: 4),
-                            Text('40K',
-                                style: TextStyle(
-                                    fontSize: 12, color: Colors.white)),
+                            Text(
+                              '40K',
+                              style:
+                                  TextStyle(fontSize: 12, color: Colors.white),
+                            ),
                           ],
                         ),
                       ),
@@ -302,30 +347,27 @@ class HomeContent extends StatelessWidget {
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 10),
-            Row(
-              children: [
-                Expanded(
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(10.0),
-                    child: Image.asset(
-                      'assets/facility1.jpg',
-                      fit: BoxFit.cover,
-                      height: 100,
+            SizedBox(
+              height: 120, // Tinggi area gambar
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: 6, // Jumlah gambar
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding:
+                        const EdgeInsets.only(right: 10), // Spasi antar gambar
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10.0),
+                      child: Image.asset(
+                        'assets/fasilitas/fasilitas${index + 1}.png', // Ganti sesuai nama gambar di assets
+                        fit: BoxFit.cover,
+                        height: 100,
+                        width: 200, // Tambahkan lebar gambar
+                      ),
                     ),
-                  ),
-                ),
-                const SizedBox(width: 10),
-                Expanded(
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(10.0),
-                    child: Image.asset(
-                      'assets/facility2.jpg',
-                      fit: BoxFit.cover,
-                      height: 100,
-                    ),
-                  ),
-                ),
-              ],
+                  );
+                },
+              ),
             ),
             const SizedBox(height: 20),
 
@@ -335,30 +377,28 @@ class HomeContent extends StatelessWidget {
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 10),
-            Row(
-              children: [
-                Expanded(
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(10.0),
-                    child: Image.asset(
-                      'assets/menu1.jpg',
-                      fit: BoxFit.cover,
-                      height: 100,
+            SizedBox(
+              height: 120, // Tinggi area gambar
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: 6, // Jumlah gambar
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding:
+                        const EdgeInsets.only(right: 10), // Spasi antar gambar
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(
+                          10.0), // Radius untuk sudut melengkung
+                      child: Image.asset(
+                        'assets/menu/menu${index + 1}.jpg', // Ganti sesuai nama gambar di assets
+                        fit: BoxFit.cover,
+                        height: 100,
+                        width: 210, // Tambahkan lebar gambar
+                      ),
                     ),
-                  ),
-                ),
-                const SizedBox(width: 10),
-                Expanded(
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(10.0),
-                    child: Image.asset(
-                      'assets/menu2.jpg',
-                      fit: BoxFit.cover,
-                      height: 100,
-                    ),
-                  ),
-                ),
-              ],
+                  );
+                },
+              ),
             ),
           ],
         ),

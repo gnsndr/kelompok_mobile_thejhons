@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_thejhons/screens/login_page.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -17,9 +18,9 @@ class _RegisterPageState extends State<RegisterPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/image1.png'),
+            image: AssetImage('assets/image1.png'), // Gambar latar belakang
             fit: BoxFit.cover,
           ),
         ),
@@ -31,13 +32,25 @@ class _RegisterPageState extends State<RegisterPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  const Text(
-                    'THE JHONS',
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
+                  // Judul dengan logo
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        'assets/logo the jhon.png',
+                        height: 30,
+                        width: 30,
+                      ),
+                      const SizedBox(width: 10),
+                      const Text(
+                        'THE JHONS',
+                        style: TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
                   ),
                   const SizedBox(height: 20),
                   // Username TextField
@@ -93,7 +106,13 @@ class _RegisterPageState extends State<RegisterPage> {
                   // Register Button
                   ElevatedButton(
                     onPressed: () {
-                      // Add your register logic here
+                      // Navigasi ke LoginPage
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const LoginPage(),
+                        ),
+                      );
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.blue, // Background color
@@ -112,14 +131,33 @@ class _RegisterPageState extends State<RegisterPage> {
                   // Login Text
                   TextButton(
                     onPressed: () {
-                      // Navigate back to the login page
-                      Navigator.pop(context);
+                      // Navigasi ke LoginPage
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const LoginPage(),
+                        ),
+                      );
                     },
-                    child: const Text(
-                      'Sudah punya akun? Login',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
+                    child: RichText(
+                      text: const TextSpan(
+                        children: [
+                          TextSpan(
+                            text: 'Sudah punya akun? ',
+                            style: TextStyle(
+                              color: Colors
+                                  .white, // Warna putih untuk teks pertama
+                              fontWeight: FontWeight.normal,
+                            ),
+                          ),
+                          TextSpan(
+                            text: 'Login',
+                            style: TextStyle(
+                              color: Colors.blue, // Warna biru untuk teks kedua
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ),

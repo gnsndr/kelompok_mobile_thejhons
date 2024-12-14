@@ -19,73 +19,96 @@ class PoolDetailPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(
-              'assets/logo the jhon.png',
-              height: 30,
-              width: 30,
-            ),
-            const SizedBox(width: 10),
-            const Text(
-              'The Jhons',
-              style: TextStyle(
-                fontSize: 20,
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ],
-        ),
         backgroundColor: const Color(0xFF405769),
         centerTitle: true,
-        leading: IconButton(
-          icon: const Icon(
-            Icons.arrow_back,
-            color: Colors.white,
-          ),
-          onPressed: () {
-            Navigator.pop(context); // Kembali ke halaman sebelumnya
-          },
+        automaticallyImplyLeading: true,
+        iconTheme: const IconThemeData(
+          color: Colors.white, // Tombol kembali menjadi warna putih
+        ),
+        title: Stack(
+          alignment: Alignment.center,
+          children: [
+            Row(
+              mainAxisSize:
+                  MainAxisSize.min, // Menghindari row memenuhi seluruh lebar
+              children: [
+                Image.asset(
+                  'assets/logo the jhon.png',
+                  height: 30,
+                  width: 30,
+                ),
+                const SizedBox(width: 10),
+                const Text(
+                  'The Jhons',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
       body: Stack(
         children: [
-          Column(
-            children: [
-              // Gambar yang dapat di-slide dengan indikator titik di bagian bawah
-              SizedBox(
-                height:
-                    MediaQuery.of(context).size.height * 0.6, // Tinggi slide
-                child: PageView.builder(
-                  controller: _pageController,
-                  itemCount: imageUrls.length,
-                  itemBuilder: (context, index) {
-                    return Image.asset(
-                      imageUrls[index],
-                      fit: BoxFit.cover,
-                      width: double.infinity,
-                    );
-                  },
+          // Bagian Gambar (dapat digeser)
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.6, // Tinggi slide
+            child: PageView.builder(
+              controller: _pageController,
+              itemCount: imageUrls.length,
+              itemBuilder: (context, index) {
+                return Image.asset(
+                  imageUrls[index],
+                  fit: BoxFit.cover,
+                  width: double.infinity,
+                );
+              },
+            ),
+          ),
+
+          // SmoothPageIndicator (Indikator Gambar)
+          Positioned(
+            bottom: MediaQuery.of(context).size.height *
+                0.15, // Posisi di bawah gambar
+            left: 0,
+            right: 0,
+            child: Center(
+              child: SmoothPageIndicator(
+                controller: _pageController,
+                count: imageUrls.length,
+                effect: const ExpandingDotsEffect(
+                  dotHeight: 8,
+                  dotWidth: 8,
+                  spacing: 4,
+                  dotColor: Colors.white,
+                  activeDotColor: Color(0xFF405769),
                 ),
               ),
-            ],
+            ),
           ),
+
+          // Kotak Informasi
           Positioned(
-            top: MediaQuery.of(context).size.height * 0.35,
-            left: 16,
-            right: 16,
+            top: MediaQuery.of(context).size.height *
+                0.5, // Setengah tinggi layar
+            left: 0,
+            right: 0,
             child: Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(20),
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(20),
+                  topRight: Radius.circular(20),
+                ),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.2),
+                    color: Colors.black.withOpacity(0.1),
                     blurRadius: 10,
-                    offset: const Offset(0, 5),
+                    offset: const Offset(0, -5),
                   ),
                 ],
               ),
@@ -98,26 +121,28 @@ class PoolDetailPage extends StatelessWidget {
                       style: const TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.bold,
-                        color: Colors.blue,
+                        color: Color(0xFF405769),
                       ),
                     ),
                   ),
                   const SizedBox(height: 10),
                   const Divider(color: Colors.blue, thickness: 1),
                   const SizedBox(height: 10),
-                  Text(
-                    description,
-                    style: const TextStyle(fontSize: 14, color: Colors.black),
+                  const Text(
+                    "Informasi",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xFF405769),
+                    ),
                   ),
-                  const SizedBox(height: 10),
-                  const Divider(color: Colors.blue, thickness: 1),
-                  const SizedBox(height: 10),
+                  const SizedBox(height: 8),
                   const Text(
                     "Pakaian Renang: Pakai baju renang yang diizinkan",
                     style: TextStyle(fontSize: 14),
                   ),
                   const Text(
-                    "Usia: Dewasa diatas 15 tahun",
+                    "Usia: Dewasa di atas 15 tahun",
                     style: TextStyle(fontSize: 14),
                   ),
                   const Text(
@@ -129,25 +154,6 @@ class PoolDetailPage extends StatelessWidget {
                     style: TextStyle(fontSize: 14),
                   ),
                 ],
-              ),
-            ),
-          ),
-          Positioned(
-            top: MediaQuery.of(context).size.height * 0.48,
-            left: 0,
-            right: 0,
-            child: Center(
-              child: SmoothPageIndicator(
-                controller: _pageController,
-                count: imageUrls.length,
-                effect: ExpandingDotsEffect(
-                  activeDotColor: Colors.blue,
-                  dotColor: Colors.white,
-                  dotHeight: 8.0,
-                  dotWidth: 8.0,
-                  expansionFactor: 2,
-                  spacing: 4.0,
-                ),
               ),
             ),
           ),

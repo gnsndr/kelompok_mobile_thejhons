@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_thejhons/screens/landing_page.dart';
 
 class AccountPage extends StatelessWidget {
   const AccountPage({super.key});
@@ -68,7 +69,13 @@ class AccountPage extends StatelessWidget {
                   // Handle Help action
                 }),
                 _buildMenuItem(Icons.logout, 'Keluar', () {
-                  // Handle Logout action
+                  // Navigasi ke halaman landing page
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => LandingPage(),
+                    ),
+                  );
                 }),
               ],
             ),

@@ -40,11 +40,10 @@ class FoodPage extends StatelessWidget {
               categoryTitle: 'Cemilan',
               items: [
                 _buildFoodItem('assets/menu/menu3.jpg', 'Chitato', '10k'),
-                _buildFoodItem('assets/menu/menu6.jpg', 'Nasi Goreng', '25k'),
-                _buildFoodItem('assets/image 7.png', 'Pop Mie', '10k'),
-                _buildFoodItem(
-                    'assets/images/nasigoreng.png', 'Nasi Goreng', '25k'),
-                _buildFoodItem('assets/images/popmie.png', 'Pop Mie', '10k'),
+                _buildFoodItem('assets/menu/menu13.jpeg', 'Chiki Ball', '10k'),
+                _buildFoodItem('assets/menu/menu14.jpg', 'TicTic', '10k'),
+                _buildFoodItem('assets/menu/menu14.png', 'Chitato Late', '10k'),
+                _buildFoodItem('assets/menu/menu15.webp', 'Taro', '10k'),
               ],
             ),
           ],

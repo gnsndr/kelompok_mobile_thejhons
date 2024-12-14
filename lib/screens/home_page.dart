@@ -31,11 +31,12 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         backgroundColor: Color(0xFF405769),
         centerTitle: true,
+        automaticallyImplyLeading: false, // Menghapus tombol kembali
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              'assets/logo the jhon.png', // Pastikan file logo ada di folder `assets`
+              'assets/logo the jhon.png',
               height: 30,
             ),
             const SizedBox(width: 8), // Jarak antara logo dan teks
@@ -49,6 +50,7 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
+
       // Gunakan IndexedStack untuk mempertahankan status halaman
       body: Container(
         decoration: BoxDecoration(
@@ -67,7 +69,6 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
         selectedItemColor: Color(0xFF405769),
         unselectedItemColor: Colors.grey,
         currentIndex: _selectedIndex,

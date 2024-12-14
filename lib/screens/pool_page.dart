@@ -104,21 +104,21 @@ class PoolPage extends StatelessWidget {
               _buildCard(
                 context: context,
                 imageUrls: [
-                  'assets/image4.png',
-                  'assets/image5.png',
-                  'assets/image6.png',
+                  'assets/kolam anak1.png',
+                  'assets/kolam anak1.png',
+                  'assets/kolam anak1.png',
                 ],
                 title: 'Kolam Anak',
                 description: 'Arena Khusus Untuk Anak-anak Usia 5-15 Tahun',
-                distance: '2 Meter',
+                distance: '1 Meter',
               ),
               const SizedBox(height: 16),
               _buildCard(
                 context: context,
                 imageUrls: [
-                  'assets/image7.png',
-                  'assets/image8.png',
-                  'assets/image9.png',
+                  'assets/kolam dewasa.png',
+                  'assets/kolam dewasa.png',
+                  'assets/kolam dewasa4.jpeg',
                 ],
                 title: 'Kolam Dewasa',
                 description:

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_thejhons/screens/landing_page.dart';
+import 'package:mobile_thejhons/screens/EditProfilePage.dart';
+import 'package:mobile_thejhons/screens/LanguangePage';
+import 'package:mobile_thejhons/screens/login_page.dart';
 
 class AccountPage extends StatelessWidget {
   const AccountPage({super.key});
@@ -57,24 +59,23 @@ class AccountPage extends StatelessWidget {
             child: ListView(
               children: [
                 _buildMenuItem(Icons.edit, 'Edit Profil', () {
-                  // Handle Edit Profile action
-                }),
-                _buildMenuItem(Icons.language, 'Bahasa', () {
-                  // Handle Language action
-                }),
-                _buildMenuItem(Icons.color_lens, 'Tema', () {
-                  // Handle Theme action
-                }),
-                _buildMenuItem(Icons.help_outline, 'Bantuan', () {
-                  // Handle Help action
-                }),
-                _buildMenuItem(Icons.logout, 'Keluar', () {
-                  // Navigasi ke halaman landing page
-                  Navigator.pushReplacement(
+                  Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => LandingPage(),
-                    ),
+                        builder: (context) => const EditProfilePage()),
+                  );
+                }),
+                _buildMenuItem(Icons.language, 'Bahasa', () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const LanguagePage()),
+                  );
+                }),
+                _buildMenuItem(Icons.logout, 'Keluar', () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => const LoginPage()),
                   );
                 }),
               ],

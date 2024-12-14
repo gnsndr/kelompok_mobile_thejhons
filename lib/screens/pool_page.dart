@@ -84,48 +84,53 @@ class PoolPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            children: [
-              _buildCard(
-                context: context,
-                imageUrls: [
-                  'assets/holiday.jpeg',
-                  'assets/holiday.jpeg',
-                  'assets/holiday.jpeg',
-                ], // Kirim sebagai list
-                title: 'Waterboom',
-                description: 'Arena Wahana Yang Dapat Digunakan Semua Usia',
-                distance: '1 Meter',
-              ),
-              const SizedBox(height: 16),
-              _buildCard(
-                context: context,
-                imageUrls: [
-                  'assets/kolam anak1.png',
-                  'assets/kolam anak1.png',
-                  'assets/kolam anak1.png',
-                ],
-                title: 'Kolam Anak',
-                description: 'Arena Khusus Untuk Anak-anak Usia 5-15 Tahun',
-                distance: '1 Meter',
-              ),
-              const SizedBox(height: 16),
-              _buildCard(
-                context: context,
-                imageUrls: [
-                  'assets/kolam dewasa.png',
-                  'assets/kolam dewasa.png',
-                  'assets/kolam dewasa4.jpeg',
-                ],
-                title: 'Kolam Dewasa',
-                description:
-                    'Arena Wahana Yang Dapat Digunakan Untuk usia 15 tahun ke atas',
-                distance: '5 meter',
-              ),
-            ],
+      body: Container(
+        decoration: const BoxDecoration(
+          color: Color(0xFFD9D9D9), // Warna latar belakang biru muda
+        ),
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              children: [
+                _buildCard(
+                  context: context,
+                  imageUrls: [
+                    'assets/holiday.jpeg',
+                    'assets/holiday.jpeg',
+                    'assets/holiday.jpeg',
+                  ], // Kirim sebagai list
+                  title: 'Waterboom',
+                  description: 'Arena Wahana Yang Dapat Digunakan Semua Usia',
+                  distance: '1 Meter',
+                ),
+                const SizedBox(height: 16),
+                _buildCard(
+                  context: context,
+                  imageUrls: [
+                    'assets/kolam anak1.png',
+                    'assets/kolam anak1.png',
+                    'assets/kolam anak1.png',
+                  ],
+                  title: 'Kolam Anak',
+                  description: 'Arena Khusus Untuk Anak-anak Usia 5-15 Tahun',
+                  distance: '1 Meter',
+                ),
+                const SizedBox(height: 16),
+                _buildCard(
+                  context: context,
+                  imageUrls: [
+                    'assets/kolam dewasa.png',
+                    'assets/kolam dewasa.png',
+                    'assets/kolam dewasa4.jpeg',
+                  ],
+                  title: 'Kolam Dewasa',
+                  description:
+                      'Arena Wahana Yang Dapat Digunakan Untuk usia 15 tahun ke atas',
+                  distance: '5 meter',
+                ),
+              ],
+            ),
           ),
         ),
       ),

@@ -66,6 +66,21 @@ class _RegisterPageState extends State<RegisterPage> {
                           const EdgeInsets.symmetric(horizontal: 16.0),
                     ),
                   ),
+                  const SizedBox(height: 20),
+                  TextField(
+                    controller: _usernameController,
+                    decoration: InputDecoration(
+                      labelText: 'Email',
+                      labelStyle: const TextStyle(color: Colors.grey),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12.0),
+                      ),
+                      filled: true,
+                      fillColor: Colors.white,
+                      contentPadding:
+                          const EdgeInsets.symmetric(horizontal: 16.0),
+                    ),
+                  ),
                   const SizedBox(height: 16),
                   TextField(
                     controller: _passwordController,

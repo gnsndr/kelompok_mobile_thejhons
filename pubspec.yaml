@@ -61,38 +61,37 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-  - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\image1.png
-  - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\holiday.jpeg
-  - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\image 7.png
-  - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\logo the jhon.png
-  - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\fasilitas\fasilitas1.png
-  - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\fasilitas\fasilitas2.png
-  - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\fasilitas\fasilitas3.png
-  - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\fasilitas\fasilitas4.png
-  - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\fasilitas\fasilitas5.png
-  - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\fasilitas\fasilitas6.png
-  - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\menu\menu1.jpg
-  - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\menu\menu2.jpg
-  - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\menu\menu3.jpg
-  - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\menu\menu4.jpg
-  - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\menu\menu5.jpg
-  - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\menu\menu6.jpg
-  - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\menu\menu7.jpg
-  - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\menu\menu8.jpg
-  - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\menu\menu9.jpg
-  - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\menu\menu10.jpg
-  - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\menu\menu11.jpg
-  - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\menu\menu12.jpg
-  - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\menu\menu13.jpeg
-  - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\menu\menu14.png
-  - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\menu\menu14.jpg
-  - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\menu\menu15.webp
-  - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\kolam anak1.png
-  - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\image4.jpg
-  - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\image3.jpg
-  - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\kolam dewasa.png
-  - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\kolam dewasa3.jpg
-  - D:\mobile\tugas_kelompok_mobile\mobile_thejhons\assets\kolam dewasa4.jpeg
+  - assets\image1.png
+  - assets\image3.jpg
+  - assets\image4.jpg
+  - assets\image 7.png
+  - assets\holiday.jpeg
+  - assets\kolam anak1.png
+  - assets\kolam dewasa.png
+  - assets\kolam dewasa3.jpg
+  - assets\kolam dewasa4.jpeg
+  - assets\logo the jhon.png
+  - assets\menu\menu1.jpg
+  - assets\menu\menu2.jpg
+  - assets\menu\menu3.jpg
+  - assets\menu\menu4.jpg
+  - assets\menu\menu5.jpg
+  - assets\menu\menu6.jpg
+  - assets\menu\menu7.jpg
+  - assets\menu\menu8.jpg
+  - assets\menu\menu9.jpg
+  - assets\menu\menu10.jpg
+  - assets\menu\menu11.jpg
+  - assets\menu\menu12.jpg
+  - assets\menu\menu13.jpeg
+  - assets\menu\menu14.jpg
+  - assets\menu\menu15.webp
+  - assets\fasilitas\fasilitas1.png
+  - assets\fasilitas\fasilitas2.png
+  - assets\fasilitas\fasilitas3.png
+  - assets\fasilitas\fasilitas4.png
+  - assets\fasilitas\fasilitas5.png
+  - assets\fasilitas\fasilitas6.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

@@ -7,7 +7,7 @@ class PoolPage extends StatelessWidget {
   // Function to build the card widget
   Widget _buildCard({
     required BuildContext context,
-    required List<String> imageUrls, 
+    required List<String> imageUrls,
     required String title,
     required String description,
     required String distance,
@@ -18,7 +18,7 @@ class PoolPage extends StatelessWidget {
           context,
           MaterialPageRoute(
             builder: (context) => PoolDetailPage(
-              imageUrls: imageUrls, 
+              imageUrls: imageUrls,
               title: title,
               description: description,
             ),
@@ -39,7 +39,7 @@ class PoolPage extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
                   image: DecorationImage(
-                    image: AssetImage(imageUrls.first), 
+                    image: AssetImage(imageUrls.first),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -82,7 +82,7 @@ class PoolPage extends StatelessWidget {
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
-          color: Color(0xFFD9D9D9), 
+          color: Color(0xFFD9D9D9),
         ),
         child: SingleChildScrollView(
           child: Padding(
@@ -95,8 +95,8 @@ class PoolPage extends StatelessWidget {
                     'assets/holiday.jpeg',
                     'assets/holiday.jpeg',
                     'assets/holiday.jpeg',
-                  ], 
-                  title: 'Waterboom',
+                  ],
+                  title: 'Ozone Pool',
                   description: 'Arena Wahana Yang Dapat Digunakan Semua Usia',
                   distance: '1 Meter',
                 ),
@@ -108,7 +108,7 @@ class PoolPage extends StatelessWidget {
                     'assets/kolam anak1.png',
                     'assets/kolam anak1.png',
                   ],
-                  title: 'Kolam Anak',
+                  title: 'Kiddyland Pool',
                   description: 'Arena Khusus Untuk Anak-anak Usia 5-15 Tahun',
                   distance: '1 Meter',
                 ),
@@ -120,7 +120,7 @@ class PoolPage extends StatelessWidget {
                     'assets/kolam dewasa.png',
                     'assets/kolam dewasa4.jpeg',
                   ],
-                  title: 'Kolam Dewasa',
+                  title: 'Naga Pool',
                   description:
                       'Arena Wahana Yang Dapat Digunakan Untuk usia 15 tahun ke atas',
                   distance: '5 meter',

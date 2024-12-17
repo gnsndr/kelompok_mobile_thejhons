@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_thejhons/screens/EditProfilePage.dart';
-import 'package:mobile_thejhons/screens/LanguangePage';
+import 'package:mobile_thejhons/screens/LanguangePage.dart';
 import 'package:mobile_thejhons/screens/login_page.dart';
 
 class AccountPage extends StatelessWidget {
@@ -17,8 +17,7 @@ class AccountPage extends StatelessWidget {
             height: 50,
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage(
-                    'assets/images/header_image.png'), 
+                image: AssetImage('assets/images/header_image.png'),
                 fit: BoxFit.cover,
               ),
               borderRadius: BorderRadius.vertical(

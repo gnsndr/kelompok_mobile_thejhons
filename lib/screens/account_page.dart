@@ -17,8 +17,7 @@ class AccountPage extends StatelessWidget {
             height: 50,
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage(
-                    'assets/images/header_image.png'), 
+                image: AssetImage('assets/images/header_image.png'),
                 fit: BoxFit.cover,
               ),
               borderRadius: BorderRadius.vertical(

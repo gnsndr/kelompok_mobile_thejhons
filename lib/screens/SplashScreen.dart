@@ -28,8 +28,8 @@ class _SplashScreenState extends State<SplashScreen> {
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              Color(0xFF87CEFA), // Warna biru langit (gradasi atas)
-              Color(0xFF4682B4), // Warna biru laut (gradasi bawah)
+              Color(0xFF87CEFA),
+              Color(0xFF4682B4),
             ],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -48,8 +48,7 @@ class _SplashScreenState extends State<SplashScreen> {
               Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  const SizedBox(
-                      height: 200), // jarak antara animasi dan teks
+                  const SizedBox(height: 200), // jarak antara animasi dan teks
                   const Text(
                     'The Jhons',
                     style: TextStyle(
